@@ -4,7 +4,6 @@ void main() {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -22,16 +21,38 @@ class TodoListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("リスト一覧画面"),
+      appBar: AppBar(
+        title: Text("リスト一覧"),
+      ),
+      body: ListView(
+        children: const <Widget>[
+          Card(
+            child: ListTile(
+              title: Text("にんじんを買う"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("玉ねぎを買う"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("ジャガイモを買う"),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: Text("カレールーを買う"),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context){
-                return TodoAddPage();
-              })
-          );
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return TodoAddPage();
+          }));
         },
         child: Icon(Icons.add),
       ),
@@ -45,7 +66,7 @@ class TodoAddPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: TextButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.of(context).pop();
           },
           child: Text("リスト追加画面(クリックで戻る)"),
