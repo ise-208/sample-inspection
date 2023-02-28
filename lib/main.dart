@@ -47,6 +47,54 @@ class WelcomePage extends StatelessWidget {
   }
 }
 
+class _HeaderCurveClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    return Path()
+        ..lineTo(0, size.height * 0.5)
+        ..quadraticBezierTo(size.width * 0.55, size.height, size.width, size.height * 0.6,
+        )
+        ..lineTo(size.width, 0)
+        ..close();
+  }
+  
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
+  }
+}
+
+class _HeadBackgroud extends StatelessWidget {
+  final double height;
+  
+  const _HeadBackgroud({
+    Key? key,
+    required this.height,
+}) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return ClipPath(
+      clipper: _HeaderCurveClipper(),
+      child: Container(
+        width: double.infinity,
+        height: height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: FractionalOffset.topLeft,
+            end: FractionalOffset.bottomRight,
+            colors: [
+              Color(0xFFFD9766),
+              Color(0xFFFF7362),
+            ],
+            stops: [0,1]
+          )
+        ),
+      ),
+    );
+  }
+}
+
 
 
 
