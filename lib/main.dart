@@ -96,8 +96,23 @@ class _HeadBackgroud extends StatelessWidget {
 }
 
 
-
-
+class _Footer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'Not have Account ?',
+        ),
+        SizedBox(width: 4),
+        Text(
+          'sign up',
+        ),
+      ],
+    );
+  }
+}
 
 class SideNavigation extends StatefulWidget {
   @override
