@@ -1,3 +1,4 @@
+import 'package:demo_todo/ui/HamburgerMenu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,11 +8,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(title: Text('Sample'))
+            appBar: AppBar(title: Text('Sample')),
+            drawer:Drawer(
+              child: HamburgerMenu(),
+            )
         ),
     // body: ,
     );
   }
-
-  // const HomePage( {Key? key, required this.titile}): super(key: key);
 }
