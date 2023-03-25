@@ -13,7 +13,6 @@ class HomePage extends StatelessWidget {
               child: HamburgerMenu(),
             )
         ),
-    // body: ,
     );
   }
 }
