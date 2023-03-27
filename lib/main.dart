@@ -1,5 +1,5 @@
-import 'package:demo_todo/presentation/HomePage.dart';
-import 'package:demo_todo/presentation/SamplePage.dart';
+import 'package:demo_todo/presentation/home_page.dart';
+import 'package:demo_todo/presentation/sample_page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -101,30 +101,6 @@ class _Footer extends StatelessWidget {
     );
   }
 }
-//
-// class WelcomePage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: kBackgroundColor,
-//       body: SafeArea(
-//         child: SingleChildScrollView(
-//           child: Column(
-//             children: [
-//               // _Header()
-//               Padding(padding: const EdgeInsets.symmetric(horizontal: 32),
-//               child: _SignForm(),
-//               ),
-//               Padding(padding: const EdgeInsets.symmetric(vertical: 64),
-//               child: _Footer(),
-//               )
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class TodoListPage extends StatefulWidget {
   @override

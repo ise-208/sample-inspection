@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-class MyTodoApp extends StatelessWidget {
+class SamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
