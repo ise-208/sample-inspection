@@ -1,7 +1,4 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 
 class SamplePage extends StatelessWidget {
   @override
@@ -9,16 +6,13 @@ class SamplePage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme:
-      ThemeData(
+      theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity),
       home: AdminMobilePage(),
     );
   }
 }
-
-
 
 class SideNavigation extends StatefulWidget {
   @override
@@ -39,36 +33,29 @@ class _SideNavigationState extends State<SideNavigation> {
       },
       destinations: [
         NavigationRailDestination(
-            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")
-        ),
+            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")),
         NavigationRailDestination(
-            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")
-        ),
+            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")),
         NavigationRailDestination(
-            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")
-        ),
+            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")),
         NavigationRailDestination(
-            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")
-        ),
+            icon: Icon(Icons.thumbs_up_down), label: Text("ThumbsUpDown")),
       ],
     );
   }
 }
-
-
 
 class AdminMobilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Row(
-          children: [
-            SideNavigation(),
-            VerticalDivider(thickness: 1,width: 1),
-            Expanded(child: PostList())
-          ],
-        )
-    );
+      children: [
+        SideNavigation(),
+        VerticalDivider(thickness: 1, width: 1),
+        Expanded(child: PostList())
+      ],
+    ));
   }
 }
 
@@ -81,18 +68,15 @@ class PostList extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: [
           _PostHeader(),
-          Expanded(child: ListView(
-            children: [
-              _PostGreen(),
-              _PostGreen()
-            ],
+          Expanded(
+              child: ListView(
+            children: [_PostGreen(), _PostGreen()],
           ))
         ],
       ),
     );
   }
 }
-
 
 class _PostHeader extends StatelessWidget {
   @override
@@ -155,7 +139,6 @@ class _PostGreen extends StatelessWidget {
   }
 }
 
-
 class _Post extends StatelessWidget {
   final String name;
   final String message;
@@ -175,8 +158,7 @@ class _Post extends StatelessWidget {
     required this.textPositive,
     required this.colorNegative,
     required this.textNegative,
-  }) ;
-
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -185,9 +167,7 @@ class _Post extends StatelessWidget {
       child: Card(
         elevation: 8,
         shadowColor: Colors.grey,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8)
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: Column(
           children: [
             ListTile(
@@ -198,7 +178,7 @@ class _Post extends StatelessWidget {
                   height: 48,
                   child: Center(
                     child: Text(
-                      name.substring(0,1),
+                      name.substring(0, 1),
                       style: TextStyle(color: Colors.white, fontSize: 24),
                     ),
                   ),
@@ -218,8 +198,7 @@ class _Post extends StatelessWidget {
                     height: 16,
                     decoration: BoxDecoration(
                         border: Border.all(color: colorPositive, width: 4),
-                        borderRadius: BorderRadius.circular(8)
-                    ),
+                        borderRadius: BorderRadius.circular(8)),
                   )
                 ],
               ),
@@ -227,7 +206,6 @@ class _Post extends StatelessWidget {
           ],
         ),
       ),
-
     );
   }
 }
