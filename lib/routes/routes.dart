@@ -6,6 +6,7 @@ import '../presentation/sample_page.dart';
 Map<String, WidgetBuilder> getAplicationRoutes() {
   return <String, WidgetBuilder>{
     "/": (BuildContext context) => HomePage(),
-    "sample": (BuildContext context) => SamplePage(),
+    "/sample": (BuildContext context) => SamplePage(),
+    "/home": (BuildContext context) => HomePage()
   };
 }

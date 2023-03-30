@@ -6,10 +6,10 @@ class SamplePage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: AdminMobilePage(),
+      // theme: ThemeData(
+      //     primarySwatch: Colors.blue,
+      //     visualDensity: VisualDensity.adaptivePlatformDensity),
+      // home: AdminMobilePage(),
     );
   }
 }
