@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'base.dart';
 
 class Detail extends StatelessWidget {
   Function closeAction;
@@ -13,7 +14,6 @@ class Detail extends StatelessWidget {
       child: Center(
         child: Padding(
           padding: EdgeInsets.all(20),
-
           child: Container(
             margin: EdgeInsets.all(20),
             padding: EdgeInsets.all(20),
@@ -21,7 +21,7 @@ class Detail extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5)]),
-            child: ,// todo ,
+            child: Base(),
           ),
         ),
       ),

@@ -3,13 +3,8 @@ import 'package:flutter/material.dart';
 class SamplePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      // theme: ThemeData(
-      //     primarySwatch: Colors.blue,
-      //     visualDensity: VisualDensity.adaptivePlatformDensity),
-      // home: AdminMobilePage(),
+    return Scaffold(
+      appBar: AppBar(title: Text("Page1")),
     );
   }
 }

@@ -7,21 +7,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         appBar: AppBar(title: Text('Sample')),
         drawer: Drawer(
           child: HamburgerMenu(),
         ),
         body: Center(
-          child: TextButton(
-            child: Text("遷移"),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SamplePage()));
-            },
-          ),
-        ),
-      ),
-    );
+            child: TextButton(
+                child: const Text("遷移"),
+                onPressed: () => {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => SamplePage()))
+                    })));
   }
 }
