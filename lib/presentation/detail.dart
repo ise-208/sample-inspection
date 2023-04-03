@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'base.dart';
-
 class Detail extends StatelessWidget {
-  Function closeAction;
-
-  Detail(this.closeAction);
+  // Function closeAction;
+  //
+  // Detail(this.closeAction);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class Detail extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5)]),
-            child: Base(),
+            child: Icon(Icons.add),
           ),
         ),
       ),

@@ -1,7 +1,5 @@
 import 'package:demo_todo/presentation/home_page.dart';
-import 'package:demo_todo/presentation/sample_page.dart';
 import 'package:flutter/material.dart';
-
 
 const Color kAccentColor = Color(0xFFFE7C64);
 const Color kBackgroundColor = Color(0xFF19283D);
@@ -11,23 +9,19 @@ const Color kButtonColorPrimary = Color(0xFFECEFF1);
 const Color kButtonTextColorPrimary = Color(0xFF455A64);
 const Color kIconColor = Color(0xFF455A64);
 
-
 void main() {
   runApp(HomePage());
 }
 
-
 class WelcomePage extends StatelessWidget {
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            children: [
-
-            ],
+            children: [],
           ),
         ),
       ),
@@ -39,13 +33,17 @@ class _HeaderCurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     return Path()
-        ..lineTo(0, size.height * 0.5)
-        ..quadraticBezierTo(size.width * 0.55, size.height, size.width, size.height * 0.6,
-        )
-        ..lineTo(size.width, 0)
-        ..close();
+      ..lineTo(0, size.height * 0.5)
+      ..quadraticBezierTo(
+        size.width * 0.55,
+        size.height,
+        size.width,
+        size.height * 0.6,
+      )
+      ..lineTo(size.width, 0)
+      ..close();
   }
-  
+
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) {
     return true;
@@ -54,12 +52,12 @@ class _HeaderCurveClipper extends CustomClipper<Path> {
 
 class _HeadBackgroud extends StatelessWidget {
   final double height;
-  
+
   const _HeadBackgroud({
     Key? key,
     required this.height,
-}) : super(key: key);
-  
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ClipPath(
@@ -68,21 +66,21 @@ class _HeadBackgroud extends StatelessWidget {
         width: double.infinity,
         height: height,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: FractionalOffset.topLeft,
-            end: FractionalOffset.bottomRight,
-            colors: [
+            gradient: LinearGradient(
+                begin: FractionalOffset.topLeft,
+                end: FractionalOffset.bottomRight,
+                colors: [
               Color(0xFFFD9766),
               Color(0xFFFF7362),
             ],
-            stops: [0,1]
-          )
-        ),
+                stops: [
+              0,
+              1
+            ])),
       ),
     );
   }
 }
-
 
 class _Footer extends StatelessWidget {
   @override
@@ -127,11 +125,10 @@ class _TodoListPageState extends State<TodoListPage> {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          final newListText = await Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) {
-                return TodoAddPage();
-              })
-          );
+          final newListText = await Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) {
+            return TodoAddPage();
+          }));
           if (newListText != null) {
             setState(() {
               todoList.add(newListText);
@@ -165,7 +162,6 @@ class _TodoAddPageState extends State<TodoAddPage> {
           children: <Widget>[
             Text(_text, style: TextStyle(color: Colors.blue)),
             const SizedBox(height: 8),
-
             TextField(
               onChanged: (String value) {
                 setState(() {
@@ -173,7 +169,6 @@ class _TodoAddPageState extends State<TodoAddPage> {
                 });
               },
             ),
-
             Container(
               width: double.infinity,
               child: ElevatedButton(
@@ -183,7 +178,6 @@ class _TodoAddPageState extends State<TodoAddPage> {
                 child: Text("リスト追加", style: TextStyle(color: Colors.white)),
               ),
             ),
-
             const SizedBox(height: 8),
             Container(
               width: double.infinity,
