@@ -1,6 +1,7 @@
 import 'package:demo_todo/presentation/sample_page1.dart';
 import 'package:demo_todo/presentation/sample_page2.dart';
 import 'package:demo_todo/presentation/sample_page3.dart';
+import 'package:demo_todo/presentation/sample_page4.dart';
 import 'package:demo_todo/ui/hamburger_menu.dart';
 import 'package:flutter/material.dart';
 
@@ -41,6 +42,12 @@ class Home extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => SamplePage3()))
                   },
               child: const Text("遷移3")),
+          TextButton(
+              onPressed: () => {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => SamplePage4()))
+                  },
+              child: const Text("遷移4")),
         ]));
   }
 }
