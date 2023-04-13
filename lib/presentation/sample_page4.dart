@@ -21,6 +21,14 @@ class SamplePage4 extends StatelessWidget {
               const Text(
                 "bar",
                 style: TextStyle(color: Colors.yellow),
+              ),
+              Container(
+                child: Text(
+                  calc(2).toString(),
+                ),
+              ),
+              Container(
+                child: Text(words("str")),
               )
             ],
           ))
@@ -39,4 +47,12 @@ class SamplePage4 extends StatelessWidget {
     fontFamily: 'Roboto',
     fontWeight: FontWeight.w900,
   );
+
+  static int calc(int i) {
+    return 1;
+  }
+
+  static String words(String str) {
+    return "$str __!  $str";
+  }
 }

@@ -74,9 +74,6 @@ class SamplePage3 extends StatelessWidget {
                     children: const [Text("4"), Text("5"), Text("6")],
                   ),
                 )),
-            ListView(
-              children: [titleSection],
-            ),
           ],
         ),
       ),
