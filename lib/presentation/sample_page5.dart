@@ -11,30 +11,17 @@ class SamplePage5 extends StatelessWidget {
         children: [
           SideNavigation(),
           const VerticalDivider(thickness: 1, width: 1),
+          Expanded(child: PostList())
         ],
       ),
     );
   }
 }
 
-class AdminMobilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Row(
-      children: [
-        SideNavigation(),
-        VerticalDivider(thickness: 1, width: 1),
-        Expanded(child: PostList())
-      ],
-    ));
-  }
-}
-
 class _PostGreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return _Post(
+    return const _Post(
         name: "name",
         message: "message",
         textReason: "textReason",
@@ -160,10 +147,11 @@ class _Post extends StatelessWidget {
               subtitle: Text("2 min ago"),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text("menu"),
                   SizedBox(width: 72),
                   Container(
                     width: 16,
