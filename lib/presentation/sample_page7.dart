@@ -21,6 +21,12 @@ class _SamplePage7 extends State {
       case "favorite":
         icon = Icons.favorite;
         break;
+      case "cabin":
+        icon = Icons.cabin;
+        break;
+      case "add":
+        icon = Icons.add;
+        break;
       default:
         icon = Icons.thumb_up;
     }
@@ -50,6 +56,25 @@ class _SamplePage7 extends State {
             ),
             Radio(
               value: "favorite",
+              groupValue: _type,
+              onChanged: (String? value) {
+                _handleRadio(value!);
+              },
+              activeColor: Colors.green,
+            ),
+            Radio(
+              autofocus: true,
+              value: "cabin",
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+              groupValue: _type,
+              onChanged: (String? value) {
+                _handleRadio(value!);
+              },
+              activeColor: Colors.green,
+            ),
+            Radio(
+              value: "add",
+              mouseCursor: MaterialStateMouseCursor.clickable,
               groupValue: _type,
               onChanged: (String? value) {
                 _handleRadio(value!);
