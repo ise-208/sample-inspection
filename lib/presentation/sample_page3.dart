@@ -3,30 +3,6 @@ import 'package:flutter/material.dart';
 class SamplePage3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSection = Container(
-      padding: const EdgeInsets.all(32),
-      child: Row(
-        children: [
-          Expanded(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: const Text(
-                  'foo',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              const Text(
-                "bar",
-                style: TextStyle(color: Colors.yellow),
-              )
-            ],
-          ))
-        ],
-      ),
-    );
     return Scaffold(
       appBar: AppBar(title: Text('Sample3')),
       body: Center(
@@ -74,6 +50,7 @@ class SamplePage3 extends StatelessWidget {
                     children: const [Text("4"), Text("5"), Text("6")],
                   ),
                 )),
+            _widgetArea(),
           ],
         ),
       ),
@@ -84,5 +61,18 @@ class SamplePage3 extends StatelessWidget {
     color: Colors.green,
     fontFamily: 'Roboto',
     fontWeight: FontWeight.w900,
+  );
+}
+
+Widget _widgetArea() {
+  return Container(
+    margin: EdgeInsets.all(26),
+    child: Row(
+      children: <Widget>[
+        Container(
+          child: Text("A"),
+        ),
+      ],
+    ),
   );
 }
