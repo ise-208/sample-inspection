@@ -70,8 +70,21 @@ Widget _widgetArea() {
     child: Row(
       children: <Widget>[
         Container(
-          child: Text("A"),
+          child: Text("AAAAA"),
         ),
+        Container(
+          child: Text("BBBBB"),
+        ),
+        Container(
+          child: Text("CCCC"),
+        ),
+        Container(
+            child: Column(
+          children: [
+            Text("DDDDD"),
+            Text("EEEEE"),
+          ],
+        ))
       ],
     ),
   );
