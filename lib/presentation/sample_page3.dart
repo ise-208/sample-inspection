@@ -80,11 +80,11 @@ Widget _widgetArea() {
         ),
         Container(
             child: Column(
-          children: [
-            Text("DDDDD"),
-            Text("EEEEE"),
-          ],
-        ))
+              children: [
+                Text("DDDDD"),
+                Text("EEEEE"),
+              ],
+            ))
       ],
     ),
   );

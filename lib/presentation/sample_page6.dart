@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_material_pickers/flutter_material_pickers.dart';
 
 class SamplePage6 extends StatefulWidget {
   @override
@@ -12,6 +14,9 @@ class _SamplePage6 extends State {
   double _value = 0.0;
   double _startValue = 0.0;
   double _endValue = 0.0;
+
+  String _valueString = "";
+  _model listState = _ListModel().first;
 
   void _changeSlide(double e) => setState(() {
         _value = e;
@@ -87,11 +92,40 @@ class _SamplePage6 extends State {
                     onChanged: _changeSlide,
                     onChangeStart: _startSlide,
                     onChangeEnd: _endSlide,
-                  ))
+                  )),
+              Container(
+                child: CupertinoButton(
+                  child: Text("Buttonテスト"),
+                  onPressed: () {
+                    showMaterialScrollPicker(
+                        context: context,
+                        items: _ListModel(),
+                        selectedItem: listState);
+                  },
+                ),
+              )
             ],
           ),
         ],
       ),
     );
   }
+}
+
+class _model {
+  const _model(this.name, this.code);
+
+  final String code;
+  final String name;
+
+  @override
+  String toString() => name;
+}
+
+List<_model> _ListModel() {
+  List<_model> usStates = <_model>[
+    _model('apple', '1'),
+    _model('banana', '2'),
+  ];
+  return usStates;
 }
