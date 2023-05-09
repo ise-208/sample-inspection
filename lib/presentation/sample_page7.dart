@@ -81,6 +81,10 @@ class _SamplePage7 extends State {
               },
               activeColor: Colors.green,
             ),
+            ElevatedButton(
+                onPressed: () => {print("button1")}, child: Text("button1")),
+            ElevatedButton(
+                onPressed: () => {print("button2")}, child: Text("button2"))
           ],
         ),
       ),
