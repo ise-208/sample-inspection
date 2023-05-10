@@ -7,6 +7,7 @@ class SamplePage7 extends StatefulWidget {
 
 class _SamplePage7 extends State {
   String _type = "";
+  bool isPressed = false;
 
   void _handleRadio(String e) => setState(() {
         _type = e;
@@ -35,9 +36,6 @@ class _SamplePage7 extends State {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("page7"),
-      ),
       body: Container(
         padding: const EdgeInsets.all(50.0),
         child: Column(
@@ -70,7 +68,7 @@ class _SamplePage7 extends State {
               onChanged: (String? value) {
                 _handleRadio(value!);
               },
-              activeColor: Colors.green,
+              activeColor: Colors.blue,
             ),
             Radio(
               value: "add",
@@ -84,7 +82,15 @@ class _SamplePage7 extends State {
             ElevatedButton(
                 onPressed: () => {print("button1")}, child: Text("button1")),
             ElevatedButton(
-                onPressed: () => {print("button2")}, child: Text("button2"))
+                onPressed: () => {print("button2")}, child: Text("button2")),
+            OutlinedButton(
+              onPressed: () => {},
+              style: OutlinedButton.styleFrom(
+                primary: Colors.red,
+                shape: const StadiumBorder(),
+              ),
+              child: Text("button3"),
+            )
           ],
         ),
       ),

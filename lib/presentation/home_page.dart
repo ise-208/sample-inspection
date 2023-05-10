@@ -14,6 +14,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Home(),
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
     );
   }
 }
