@@ -8,10 +8,29 @@ class SamplePage7 extends StatefulWidget {
 class _SamplePage7 extends State {
   String _type = "";
   bool isPressed = false;
+  int count = 0;
 
   void _handleRadio(String e) => setState(() {
         _type = e;
       });
+
+  void _counter1() {
+    setState(() {
+      count++;
+    });
+  }
+
+  int _counter2(int count) {
+    return count * 2;
+  }
+
+  int _counter3() {
+    return count * count;
+  }
+
+  bool _booler() {
+    return true;
+  }
 
   IconData _changeIcon(String e) {
     IconData icon;
@@ -27,6 +46,9 @@ class _SamplePage7 extends State {
         break;
       case "add":
         icon = Icons.add;
+        break;
+      case "credit_card":
+        icon = Icons.credit_card;
         break;
       default:
         icon = Icons.thumb_up;
@@ -82,14 +104,32 @@ class _SamplePage7 extends State {
             ElevatedButton(
                 onPressed: () => {print("button1")}, child: Text("button1")),
             ElevatedButton(
-                onPressed: () => {print("button2")}, child: Text("button2")),
+                onPressed: () => {_handleRadio("credit_card")},
+                child: const Text("button2")),
             OutlinedButton(
-              onPressed: () => {},
+              onPressed: () => {_handleRadio("add")},
               style: OutlinedButton.styleFrom(
                 primary: Colors.red,
                 shape: const StadiumBorder(),
               ),
-              child: Text("button3"),
+              child: const Text("button3"),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 32),
+              child: Text("Button Row [$count]"),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                TextButton(
+                    onPressed: () => {_counter1()}, child: Text("TextButton")),
+                ElevatedButton(
+                    onPressed: () => {_counter2(count)},
+                    child: Text("ElevatedButton")),
+                OutlinedButton(
+                    onPressed: () => {_counter3()},
+                    child: Text("OutlinedButton"))
+              ],
             )
           ],
         ),
