@@ -26,6 +26,7 @@ class _SamplePage8 extends State {
         child: Column(
           children: [
             OptimizerButton(),
+            BatteryLevelIndicatorPainter(),
           ],
         ),
       ),
@@ -72,6 +73,71 @@ class OptimizerButton extends StatelessWidget {
             SizedBox(width: 16),
             _OptimizerButton(text: "A"),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _BatteryLevelIndicatorPainter extends CustomPainter {
+  final double percentage;
+  final double textCircleRadius;
+
+  _BatteryLevelIndicatorPainter({
+    required this.percentage,
+    required this.textCircleRadius,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (int i = 1; i < (360 * percentage); i += 5) {
+      final per = i / 360.0;
+      final color = ColorTween(
+        begin: kColorIndicatorBegin,
+        end: kColorIndicatorEnd,
+      ).lerp(per)!;
+
+      final paint = Paint()
+        ..color = color
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 4;
+    }
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    // TODO: implement shouldRepaint
+    throw false;
+  }
+}
+
+class BatteryLevelIndicatorPainter extends StatelessWidget {
+  final percentage = 0.7;
+  final size = 164.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _BatteryLevelIndicatorPainter(
+        percentage: percentage,
+        textCircleRadius: size * 0.5,
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(64),
+        child: Material(
+          color: Colors.white,
+          elevation: kElevation,
+          borderRadius: BorderRadius.circular(size * 0.5),
+          child: Container(
+            width: size,
+            height: size,
+            child: Center(
+              child: Text(
+                '${percentage * 100} %',
+                style: TextStyle(color: kColorPink, fontSize: 48),
+              ),
+            ),
+          ),
         ),
       ),
     );
