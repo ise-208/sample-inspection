@@ -1,3 +1,4 @@
+import 'package:demo_todo/presentation/sample_page6.dart';
 import 'package:flutter/material.dart';
 
 class SamplePage7 extends StatefulWidget {
@@ -118,18 +119,30 @@ class _SamplePage7 extends State {
               padding: EdgeInsets.only(top: 32),
               child: Text("Button Row [$count]"),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                TextButton(
-                    onPressed: () => {_counter1()}, child: Text("TextButton")),
-                ElevatedButton(
-                    onPressed: () => {_counter2(count)},
-                    child: Text("ElevatedButton")),
-                OutlinedButton(
-                    onPressed: () => {_counter3()},
-                    child: Text("OutlinedButton"))
-              ],
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  TextButton(
+                      onPressed: () => {_counter1()},
+                      child: Text("TextButton")),
+                  ElevatedButton(
+                      onPressed: () => {_counter2(count)},
+                      child: Text("ElevatedButton")),
+                  OutlinedButton(
+                      onPressed: () => {_counter3()},
+                      child: Text("OutlinedButton")),
+                  OutlinedButton(
+                      onPressed: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SamplePage6()))
+                          },
+                      child: Text("OutlinedButton"))
+                ],
+              ),
             )
           ],
         ),

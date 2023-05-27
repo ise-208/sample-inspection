@@ -11,7 +11,7 @@ class Base extends StatelessWidget {
       children: [
         Container(
             height: 20,
-            child: Align(
+            child: const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
                   child: FittedBox(
