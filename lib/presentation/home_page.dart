@@ -6,6 +6,7 @@ import 'package:demo_todo/presentation/sample_page5.dart';
 import 'package:demo_todo/presentation/sample_page6.dart';
 import 'package:demo_todo/presentation/sample_page7.dart';
 import 'package:demo_todo/presentation/sample_page8.dart';
+import 'package:demo_todo/presentation/sample_page9.dart';
 import 'package:demo_todo/ui/hamburger_menu.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +79,12 @@ class Home extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => SamplePage8()))
                   },
               child: const Text("遷移8")),
+          TextButton(
+              onPressed: () => {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => SamplePage9()))
+                  },
+              child: const Text("遷移9")),
         ]));
   }
 }
