@@ -102,22 +102,26 @@ class _SamplePage7 extends State {
               },
               activeColor: Colors.green,
             ),
-            ElevatedButton(
-                onPressed: () => {print("button1")}, child: Text("button1")),
-            ElevatedButton(
-                onPressed: () => {_handleRadio("credit_card")},
-                child: const Text("button2")),
-            OutlinedButton(
-              onPressed: () => {_handleRadio("add")},
-              style: OutlinedButton.styleFrom(
-                primary: Colors.red,
-                shape: const StadiumBorder(),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  ElevatedButton(
+                      onPressed: () => {print("button1")},
+                      child: Text("button1")),
+                  ElevatedButton(
+                      onPressed: () => {_handleRadio("credit_card")},
+                      child: const Text("button2")),
+                  OutlinedButton(
+                    onPressed: () => {_handleRadio("add")},
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: Colors.red,
+                      shape: const StadiumBorder(),
+                    ),
+                    child: const Text("button3"),
+                  ),
+                ],
               ),
-              child: const Text("button3"),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 32),
-              child: Text("Button Row [$count]"),
             ),
             Padding(
               padding: const EdgeInsets.all(18.0),

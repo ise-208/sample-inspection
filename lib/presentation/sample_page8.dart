@@ -70,7 +70,7 @@ class OptimizerButton extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8),
         child: Row(
-          children: [
+          children: const [
             SizedBox(width: 16),
             _OptimizerButton(text: "A"),
           ],
