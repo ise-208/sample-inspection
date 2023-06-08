@@ -1,5 +1,6 @@
 import 'package:demo_todo/presentation/sample_page1.dart';
 import 'package:demo_todo/presentation/sample_page10.dart';
+import 'package:demo_todo/presentation/sample_page11.dart';
 import 'package:demo_todo/presentation/sample_page2.dart';
 import 'package:demo_todo/presentation/sample_page3.dart';
 import 'package:demo_todo/presentation/sample_page4.dart';
@@ -92,6 +93,12 @@ class Home extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => SamplePage10()))
                   },
               child: const Text("遷移10")),
+          TextButton(
+              onPressed: () => {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => SamplePage11()))
+                  },
+              child: const Text("遷移11")),
         ]));
   }
 }

@@ -111,7 +111,7 @@ packages:
     source: hosted
     version: "2.0.1"
   flutter_material_pickers:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_material_pickers
       sha256: d0863336725c7786b2c7008da4241173749585e607fce18542dbc8fea36219a2
