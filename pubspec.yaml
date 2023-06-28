@@ -34,6 +34,8 @@ dependencies:
   fl_chart: ^0.62.0
   syncfusion_flutter_charts: ^21.1.35
   flutter_material_pickers: ^3.3.0
+  percent_indicator: ^4.0.1
+
 
 dev_dependencies:
 
