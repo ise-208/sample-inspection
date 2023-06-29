@@ -116,6 +116,24 @@ class _SamplePage10State extends State<SamplePage10> {
                   )
                 ],
               ),
+            ),
+            Container(
+              child: DataTable(
+                columns: [
+                  DataColumn(label: Text("名前")),
+                  DataColumn(label: Text("年齢")),
+                ],
+                rows: [
+                  DataRow(cells: [
+                    DataCell(Text("foo")),
+                    DataCell(Text("50")),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text("bar")),
+                    DataCell(Text("60")),
+                  ])
+                ],
+              ),
             )
           ],
         ),
